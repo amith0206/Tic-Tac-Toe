@@ -37,10 +37,27 @@ class _HomePageState extends State<HomePage> {
     '-',
     '-',
   ];
+
   var currentplayer = 'X';
 
+  var counter= 0;
+
+  void setX() {
+    setState(() {
+      currentplayer = 'X';
+      counter=1;
+    });
+  }
+
+  void setO() {
+    setState(() {
+      currentplayer = 'O';
+      counter=1;
+    });
+  }
+
   void drawX(int i) {
-    if (grid[i] == '-') {
+    if (grid[i] == '-' && counter ==1) {
       setState(() {
         grid[i] = currentplayer;
         currentplayer = currentplayer == 'X' ? 'O' : 'X';
@@ -75,6 +92,7 @@ class _HomePageState extends State<HomePage> {
 
   void reset() {
     setState(() {
+      counter = 0;
       grid = [
         '-',
         '-',
@@ -97,9 +115,27 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              
+              Title(color: Colors.blue, child: const Text('Choose your player',
+              style: TextStyle(fontSize: 30),)),
+            ]
+          ),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: setX,
+                child: const Text('X'),
+              ),
+              const SizedBox(width: 30),
+              ElevatedButton(onPressed: setO, child: const Text('O'))
+            ],
+          ),
           Container(
-            constraints:
-                const BoxConstraints(maxHeight: 400, maxWidth: 400),
+            constraints: const BoxConstraints(maxHeight: 400, maxWidth: 400),
             margin: const EdgeInsets.all(10),
             color: Colors.black,
             child: GridView.builder(
@@ -169,4 +205,3 @@ class OtherPage extends StatelessWidget {
     );
   }
 }
-
