@@ -12,7 +12,7 @@ The game includes a home screen with the game board and a button to reset the ga
 ## Features
 
 - Interactive game board with touch input.
-- Alternating turns between players (X and O).
+- You can choose between the player and start your gaming.
 - Automatic detection of winning combinations.
 - Reset button to start a new game.
 
