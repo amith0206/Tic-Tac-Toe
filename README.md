@@ -31,7 +31,7 @@ flutter run
 
 
 ## Demo
-![](https://github.com/amith0206/Tic-Tac-Toe/blob/main/tic-tac-toe-demo.gif)
+![](https://github.com/amith0206/Tic-Tac-Toe/blob/main/demo.gif)
 ## Usage
 
 1. Launch the app on your device or simulator.
